@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet CEP - Formation Professionnelle</title>
+    <meta name="description" content="Cabinet CEP propose des formations professionnelles de qualité dans les domaines médical, psychologique et organisationnel. Découvrez nos programmes de formation adaptés à vos besoins.">
+    <meta name="keywords" content="formation, médical, psychologie, organisation, professionnel, Cabinet CEP">
+    <meta property="og:title" content="Cabinet CEP - Formation Professionnelle">
+    <meta property="og:description" content="Cabinet CEP propose des formations professionnelles de qualité dans les domaines médical, psychologique et organisationnel.">
+    <meta property="og:type" content="website">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --button-color: #e67e22;
+            --button-hover: #d35400;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --medical-color: #3498db;
+            --psycho-color: #9b59b6;
+            --org-color: #2ecc71;
+        }
+        
+        body {
+            font-family: 'Inter', 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            background-color: var(--primary-color) !important;
+            transition: all 0.5s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(44, 62, 80, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            transition: all 0.7s ease;
+        }
+        
+        .navbar-brand img {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            transform: scale(1.05);
+            color: var(--button-color) !important;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(230, 126, 34, 0.7)), 
+                       url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(44, 62, 80, 0.8), rgba(230, 126, 34, 0.6));
+            animation: gradientShift 10s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { transform: translateX(0px); }
+            50% { transform: translateX(-20px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .typing-text {
+            display: inline-block;
+            border-right: 2px solid white;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        /* Section Titles */
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            color: var(--dark-color);
+            text-align: center;
+            font-weight: 700;
+            font-size: 3rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary-color), var(--button-color));
+            border-radius: 2px;
+        }
+        
+        /* Formation Cards */
+        .formation-card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            margin-bottom: 30px;
+            overflow: hidden;
+            background-color: white;
+            transform: scale(1);
+            height: 100%;
+            position: relative;
+        }
+        
+        .formation-card:hover {
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+        
+        .formation-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+            position: relative;
+        }
+        
+        .formation-card:hover .formation-image {
+            transform: scale(1.1);
+        }
+        
+        .formation-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3));
+        }
+        
+        .formation-body {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 250px);
+        }
+        
+        .formation-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .formation-description {
+            flex-grow: 1;
+            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .formation-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .formation-duration, .formation-price {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .formation-duration i, .formation-price i {
+            color: var(--button-color);
+            margin-right: 8px;
+        }
+        
+        .formation-price {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .formation-features {
+            margin-bottom: 25px;
+        }
+        
+        .formation-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .formation-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .formation-features li i {
+            color: var(--button-color);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .formation-buttons {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-formation {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-primary-formation {
+            background: linear-gradient(to right, var(--button-color), var(--button-hover));
+            color: white;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+        }
+        
+        .btn-primary-formation:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.4);
+            background: linear-gradient(to right, var(--button-hover), var(--button-color));
+        }
+        
+        .btn-outline-formation {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-outline-formation:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Category Badges */
+        .category-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            z-index: 3;
+        }
+        
+        .badge-medical { background-color: var(--medical-color); }
+        .badge-psycho { background-color: var(--psycho-color); }
+        .badge-org { background-color: var(--org-color); }
+        
+        /* Filter Section */
+        .filter-section {
+            margin-bottom: 50px;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 12px 25px;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .filter-btn i {
+            margin-right: 8px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 0;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .contact-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            color: var(--button-color);
+            margin-bottom: 20px;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--button-color);
+            box-shadow: 0 0 0 0.2rem rgba(230, 126, 34, 0.25);
+        }
+        
+        .btn-submit {
+            background: linear-gradient(to right, var(--button-color), var(--button-hover));
+            color: white;
+            font-weight: 600;
+            padding: 15px 40px;
+            border-radius: 25px;
+            border: none;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(230, 126, 34, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--button-color), var(--secondary-color));
+        }
+        
+        .footer-section h5 {
+            color: white;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a:hover {
+            color: var(--button-color);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            transform: scale(1.2);
+            background: var(--button-color);
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 40px;
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .social-link i {
+    font-size: 18px;       /* same size for all icons */
+    text-align: center;    /* horizontal center */
+    width: 100%;           /* let the icon fill parent width */
+}
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Cursor Effects */
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+            background: rgba(44, 62, 80, 0.1);
+        }
+        
+        .cursor.hover {
+            transform: scale(1.5);
+            border-color: var(--button-color);
+            background: rgba(230, 126, 34, 0.2);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 100px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .formation-buttons {
+                flex-direction: column;
+            }
+            
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        /* Typing Animation */
+        .typing-animation {
+            overflow: hidden;
+            white-space: normal;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+
+        
+       /* Correction pour le titre des formations lors du hover */
+.formation-card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    margin-bottom: 30px;
+    overflow: hidden; /* Garder hidden pour les images */
+    background-color: white;
+    transform: scale(1);
+    height: 100%;
+    position: relative;
+}
+
+.formation-body {
+    padding: 0; /* Supprimer le padding */
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 250px);
+    overflow: visible; /* Permettre au titre de déborder */
+}
+
+.formation-title {
+    width: 100%;
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 0;
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s ease; /* Ajouter la transition */
+}
+
+.formation-description {
+    padding: 20px;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.formation-details {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.formation-features {
+    padding: 0 20px 20px 20px;
+    margin-bottom: 25px;
+}
+
+.formation-buttons {
+    padding: 0 20px 20px 20px;
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+}
+
+/* Correction pour l'animation hover */
+.formation-card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.formation-card:hover .formation-title {
+    transform: none; /* Empêcher le titre de se transformer séparément */
+}
+
+.formation-card:hover .formation-image {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Cursor Effect -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#accueil">
+                <img src="img/cep.png" width="220" height="90" alt="Cabinet CEP" class="me-2">
+               <!--  Cabinet CEP -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#accueil">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#formations">Formations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="display-3 fw-bold mb-4 typing-animation" id="typing-text">
+                Développez vos compétences avec Cabinet CEP 
+                </h1>
+                <p class="lead mb-5 fade-in">
+                    Formation professionnelle d'excellence dans les domaines médical, psychologique et organisationnel
+                </p>
+                <div class="fade-in">
+                    <a href="#formations" class="btn btn-primary me-3 btn-lg">
+                        <i class="fas fa-graduation-cap me-2"></i>
+                        Découvrir nos formations
+                    </a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-phone me-2"></i>
+                        Contactez-nous
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('formations').scrollIntoView({behavior: 'smooth'})">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Formations Section -->
+    <section id="formations" class="py-5">
+        <div class="container">
+            <h2 class="section-title fade-in">Nos Formations d'Excellence</h2>
+            <p class="text-center mb-5 lead fade-in">
+                Développez vos compétences avec nos programmes de formation professionnelle 
+                conçus par des experts reconnus dans leurs domaines.
+            </p>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-section fade-in">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">
+                        <i class="fas fa-th-large"></i>
+                        Toutes les formations
+                    </button>
+                    <button class="filter-btn" data-category="medical">
+                        <i class="fas fa-stethoscope"></i>
+                        Médical
+                    </button>
+                    <button class="filter-btn" data-category="psycho">
+                        <i class="fas fa-brain"></i>
+                        Psychologie
+                    </button>
+                    <button class="filter-btn" data-category="organisation">
+                        <i class="fas fa-users"></i>
+                        Organisation
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Formations Grid -->
+
+            <div class="row" id="formations-grid">
+
+
+
+            
+
+
+
+                
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Formation 1: Médical -->
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+                <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="medical">
+                    <div class="formation-card">
+                        <div class="formation-image" style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                            <div class="category-badge badge-medical">Médical</div>
+                        </div>
+                        <div class="formation-body">
+                            <h5 class="formation-title">Formation Médicale Avancée</h5> 
+                            <p class="formation-description">
+                                Perfectionnez vos compétences médicales avec notre programme complet et certifiant adapté aux professionnels de santé.
+                            </p>
+                            <div class="formation-details">
+                                <div class="formation-duration">
+                                    <i class="fas fa-clock"></i>
+                                    3 mois
+                                </div>
+                                <!-- <div class="formation-price">
+                                    <i class="fas fa-tag"></i>
+                                    1 200€
+                                </div> -->
+                            </div>
+                            <div class="formation-features">
+                                <h6>Points clés :</h6>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Certification professionnelle</li>
+                                    <li><i class="fas fa-check-circle"></i> Suivi personnalisé</li>
+                                    <li><i class="fas fa-check-circle"></i> Pratique sur simulateurs</li>
+                                </ul>
+                            </div>
+                            <div class="formation-buttons">
+                                <button class="btn btn-formation btn-primary-formation" onclick="window.location.href='https://api.whatsapp.com/send?phone=%2B212663890050';">
+                                    <i class="fas fa-user-plus me-2"></i>
+                                    S'inscrire
+                                </button>
+                                <button class="btn btn-formation btn-outline-formation">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    En savoir plus
+                                </button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formation 2: Psychologie -->
+
+
+
+
+                <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="psycho">
+                    <div class="formation-card">
+                        <div class="formation-image" style="background-image: url('img/image1.jpeg');">
+                            <div class="category-badge badge-psycho">Psychologie</div>
+                        </div>
+                        <div class="formation-body">
+                            <h5 class="formation-title">Dynamique Naturelle de la Parole</h5>
+                            <p class="formation-description">
+                                Approfondissez votre expertise en Dynamique Naturelle de la Parole clinique avec des méthodes thérapeutiques innovantes et éprouvées.
+                            </p>
+                            <div class="formation-details">
+                                <div class="formation-duration">
+                                    <i class="fas fa-clock"></i>
+                                    3 jours  (Niveau 1 & Niveau 2)
+                                    
+                                </div>
+                                <!-- <div class="formation-price">
+                                    <i class="fas fa-tag"></i>
+                                    980€
+                                </div> -->
+                            </div>
+                            <div class="formation-features">
+                                <h6>Points clés :</h6>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Approches thérapeutiques</li>
+                                    <li><i class="fas fa-check-circle"></i> Études de cas</li>
+                                    <li><i class="fas fa-check-circle"></i> Supervision clinique</li>  
+                                </ul>
+                                <h6>Lieu</h6>
+                                <ul>
+                                    
+                                    <li><i class="fas fa-check-circle"></i> Marrakech</li>
+
+                                </ul>
+                            </div>
+                            <div class="formation-buttons">
+                                <button class="btn btn-formation btn-primary-formation" onclick="window.location.href='https://api.whatsapp.com/send?phone=%2B212663890050';">
+                                    <i class="fas fa-user-plus me-2"></i>
+                                    S'inscrire
+                                </button>
+                                <button class="btn btn-formation btn-outline-formation">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    En savoir plus
+                                </button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formation 3: Organisation -->
+                <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="organisation">
+                    <div class="formation-card">
+                        <div class="formation-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                            <div class="category-badge badge-org">Organisation</div>
+                        </div>
+                        <div class="formation-body">
+                            <h5 class="formation-title">Gestion de Projet</h5>
+                            <p class="formation-description">
+                                Développez vos compétences managériales et organisationnelles pour optimiser la performance de vos équipes.
+                            </p>
+                            <div class="formation-details">
+                                <div class="formation-duration">
+                                    <i class="fas fa-clock"></i>
+                                    5 mois
+                                </div>
+                                <!-- <div class="formation-price">
+                                    <i class="fas fa-tag"></i>
+                                    850€
+                                </div> -->
+                            </div>
+                            <div class="formation-features">
+                                <h6>Points clés :</h6>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Leadership moderne</li>
+                                    <li><i class="fas fa-check-circle"></i> Communication efficace</li>
+                                    <li><i class="fas fa-check-circle"></i> Gestion de conflits</li>
+                                    <li><i class="fas fa-check-circle"></i> Méthodes Agile & Waterfall</li>
+                                    <li><i class="fas fa-check-circle"></i> Préparation à la certification PMP</li>
+                                </ul>
+                            </div>
+                            <div class="formation-buttons">
+                                <button class="btn btn-formation btn-primary-formation" onclick="window.location.href='https://api.whatsapp.com/send?phone=%2B212663890050';">
+                                    <i class="fas fa-user-plus me-2"></i>
+                                    S'inscrire
+                                </button>
+                                <button class="btn btn-formation btn-outline-formation">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    En savoir plus
+                                </button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Formation 4: Organisation -->
+                <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="organisation">
+                    <div class="formation-card">
+                        <div class="formation-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                            <div class="category-badge badge-org">Organisation</div>
+                        </div>
+                        <div class="formation-body">
+                            <h5 class="formation-title">Leadership et Management</h5>
+                            <p class="formation-description">
+                                Développez vos compétences managériales et organisationnelles pour optimiser la performance de vos équipes.
+                            </p>
+                            <div class="formation-details">
+                                <div class="formation-duration">
+                                    <i class="fas fa-clock"></i>
+                                    2 mois
+                                </div>
+                                <!-- <div class="formation-price">
+                                    <i class="fas fa-tag"></i>
+                                    850€
+                                </div> -->
+                            </div>
+                            <div class="formation-features">
+                                <h6>Points clés :</h6>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Techniques de motivation d’équipe</li>
+                                    <li><i class="fas fa-check-circle"></i> Intelligence émotionnelle</li>
+                                </ul>
+                            </div>
+                            <div class="formation-buttons">
+                                <button class="btn btn-formation btn-primary-formation" onclick="window.location.href='https://api.whatsapp.com/send?phone=%2B212663890050';">
+                                    <i class="fas fa-user-plus me-2"></i>
+                                    S'inscrire
+                                </button>
+                                <button class="btn btn-formation btn-outline-formation">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    En savoir plus
+                                </button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <!-- Formation 5: Organisation 
+                <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="organisation">
+                    <div class="formation-card">
+                        <div class="formation-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                            <div class="category-badge badge-org">Organisation</div>
+                        </div>
+                        <div class="formation-body">
+                            <h5 class="formation-title">Leadership et Management</h5>
+                            <p class="formation-description">
+                                Développez vos compétences managériales et organisationnelles pour optimiser la performance de vos équipes.
+                            </p>
+                            <div class="formation-details">
+                                <div class="formation-duration">
+                                    <i class="fas fa-clock"></i>
+                                    2 mois
+                                </div>
+                                <!-- <div class="formation-price">
+                                    <i class="fas fa-tag"></i>
+                                    850€
+                                </div> 
+                            </div>
+                            <div class="formation-features">
+                                <h6>Points clés :</h6>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Techniques de motivation d’équipe</li>
+                                    <li><i class="fas fa-check-circle"></i> Intelligence émotionnelle</li>
+                                    
+                                </ul>
+                            </div>
+                            <!-- <div class="formation-buttons">
+                                <button class="btn btn-formation btn-primary-formation">
+                                    <i class="fas fa-user-plus me-2"></i>
+                                    S'inscrire
+                                </button>
+                                <button class="btn btn-formation btn-outline-formation">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    En savoir plus
+                                </button>
+                            </div> 
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Formation 6: Urgences Médicales -->
+                <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="medical">
+                    <div class="formation-card">
+                        <div class="formation-image" style="background-image: url('img/image2.jpeg');">
+                            <div class="category-badge badge-medical">Médical</div>
+                        </div>
+                        <div class="formation-body">
+                            <h5 class="formation-title">Délégué Médical</h5>
+                            <p class="formation-description">
+                                Formation intensive aux gestes d'urgence et protocoles de soins d'urgence pour les professionnels de santé.
+                            </p>
+                            <div class="formation-details">
+                                <div class="formation-duration">
+                                    <i class="fas fa-clock"></i>
+                                    3 mois   -- week-end uniquement
+                                </div>
+                                <!-- <div class="formation-price">
+                                    <i class="fas fa-tag"></i>
+                                    
+                                </div> -->
+                            </div>
+                            <div class="formation-features">
+                                <h6>Points clés :</h6>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Gestes d'urgence</li>
+                                    <li><i class="fas fa-check-circle"></i> Protocoles SAMU</li>
+                                    <li><i class="fas fa-check-circle"></i> Simulation réaliste</li>
+                                    <li><i class="fas fa-check-circle"></i> Débouchés immédiats</li>
+                                </ul>
+                            </div>
+                            <div class="formation-buttons">
+                                 <button class="btn btn-formation btn-primary-formation"  onclick="window.location.href='https://api.whatsapp.com/send?phone=%2B212663890050';">
+                                    <i class="fas fa-user-plus me-2"></i>
+                                    S'inscrire
+                                </button>
+                                <button class="btn btn-formation btn-outline-formation">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    En savoir plus
+                                </button> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formation 7: Thérapie Comportementale -->
+                <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="psycho">
+                    <div class="formation-card">
+                        <div class="formation-image" style="background-image: url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                            <div class="category-badge badge-psycho">Psychologie</div>
+                        </div>
+                        <div class="formation-body">
+                            <h5 class="formation-title">Thérapie Comportementale</h5>
+                            <p class="formation-description">
+                                Maîtrisez les techniques de thérapie comportementale et cognitive pour accompagner vos patients efficacement.
+                            </p>
+                            <div class="formation-details">
+                                <div class="formation-duration">
+                                    <i class="fas fa-clock"></i>
+                                    4 mois 
+                                </div>
+                                <!-- <div class="formation-price">
+                                    <i class="fas fa-tag"></i>
+                                    1 100€
+                                </div> -->
+                            </div>
+                            <div class="formation-features">
+                                <h6>Points clés :</h6>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> TCC avancées</li>
+                                    <li><i class="fas fa-check-circle"></i> Outils d'évaluation</li>
+                                    <li><i class="fas fa-check-circle"></i> Cas pratiques</li>
+                                </ul>
+                            </div>
+                             <div class="formation-buttons">
+                                <button class="btn btn-formation btn-primary-formation" onclick="window.location.href='https://api.whatsapp.com/send?phone=%2B212663890050';">
+                                    <i class="fas fa-user-plus me-2"></i>
+                                    S'inscrire
+                                </button>
+                                <button class="btn btn-formation btn-outline-formation">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    En savoir plus
+                                </button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Formation 7: Thérapie Comportementale -->
+                <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="psycho">
+                    <div class="formation-card">
+                        <div class="formation-image" style="background-image: url('img/pub\ coach.png');">
+                            <div class="category-badge badge-psycho">Psychologie</div>
+                        </div>
+                        <div class="formation-body">
+                            <h5 class="formation-title">Coach Scolaire</h5>
+                            <p class="formation-description">
+                                Maîtrisez les techniques de thérapie comportementale et cognitive pour accompagner vos patients efficacement.
+                            </p>
+                            <div class="formation-details">
+                                <div class="formation-duration">
+                                    <i class="fas fa-clock"></i>
+                                    4 mois
+                                </div>
+                               <!--  <div class="formation-price">
+                                    <i class="fas fa-tag"></i>
+                                    1 100€
+                                </div> -->
+                            </div>
+                            <div class="formation-features">
+                                <h6>Points clés :</h6>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Formation professionnalisante</li>
+                                    <!-- <li><i class="fas fa-check-circle"></i> Outils d'évaluation</li>
+                                    <li><i class="fas fa-check-circle"></i> Cas pratiques</li> -->
+                                </ul>
+                            </div>
+                             <div class="formation-buttons">
+                                <button class="btn btn-formation btn-primary-formation" onclick="window.location.href='https://api.whatsapp.com/send?phone=%2B212663890050';">
+                                    <i class="fas fa-user-plus me-2"></i>
+                                    S'inscrire
+                                </button>
+                                <button class="btn btn-formation btn-outline-formation">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    En savoir plus
+                                </button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formation 8: Stratégie d'Entreprise -->
+                <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="organisation">
+                    <div class="formation-card">
+                        <div class="formation-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                            <div class="category-badge badge-org">Organisation</div>
+                        </div>
+                        <div class="formation-body">
+                            <h5 class="formation-title">Stratégie d'Entreprise</h5>
+                            <p class="formation-description">
+                                Élaborez et déployez des stratégies d'entreprise performantes avec nos experts en organisation.
+                            </p>
+                            <div class="formation-details">
+                                <div class="formation-duration">
+                                    <i class="fas fa-clock"></i>
+                                    3 mois 
+                                </div>
+                                <!-- <div class="formation-price">
+                                    <i class="fas fa-tag"></i>
+                                    1 050€
+                                </div> -->
+                            </div>
+                            <div class="formation-features">
+                                <h6>Points clés :</h6>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Analyse stratégique</li>
+                                    <li><i class="fas fa-check-circle"></i> Planification opérationnelle</li>
+                                    <li><i class="fas fa-check-circle"></i> Indicateurs de performance</li>
+                                </ul>
+                            </div>
+                             <div class="formation-buttons">
+                                <button class="btn btn-formation btn-primary-formation"  onclick="window.location.href='https://api.whatsapp.com/send?phone=%2B212663890050';">
+                                    <i class="fas fa-user-plus me-2"></i>
+                                    S'inscrire
+                                </button>
+                                <button class="btn btn-formation btn-outline-formation">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    En savoir plus
+                                </button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Show All Button -->
+            <!--<div class="text-center mt-5 fade-in">
+                <button class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-plus me-2"></i>
+                    Voir toutes nos formations
+                </button>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Contactez-nous</h2>
+            <p class="text-center mb-5 lead fade-in">
+                Vous avez un projet de formation ? Notre équipe d'experts est à votre disposition 
+                pour vous conseiller et vous accompagner.
+            </p>
+            
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col-lg-4 mb-4">
+                    <div class="contact-info fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5>Notre Adresse</h5>
+                        <p> Marrakech <br></p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="contact-info fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h5>Téléphone</h5>
+                        <p>07 13 52 45 45</p>
+                        <small class="text-muted">Lundi - Vendredi : 9h00 - 18h00</small>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="contact-info fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5>Email</h5>
+                        <p>cep.cabinet@gmail.com</p> 
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+        <form action="mailto:cep.cabinet@gmail.com" method="POST" enctype="text/plain">
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form fade-in">
+                        <h4 class="mb-4 text-center">Envoyez-nous un message</h4>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Nom *</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Téléphone</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="subject" class="form-label">Sujet *</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-submit">
+                                <i class="fas fa-paper-plane me-2"></i>
+                                Envoyer le message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </form>
+            <!-- Google Maps Placeholder -->
+
+            <!-- Google Maps Integration -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="contact-info fade-in p-0" style="height: 400px; overflow: hidden; border-radius: 20px;">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.1809871949325!2d-8.00921198479251!3d31.629472481344998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafec2e7d19a4ff%3A0x50a72d71f67bb6f7!2sMarrakech%2C%20Maroc!5e0!3m2!1sfr!2sma!4v1706195040000!5m2!1sfr!2sma" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <div class="row mt-5">
+                <div class="col-12">
+                    <div class="contact-info fade-in" style="height: 300px; background: linear-gradient(135deg, #f8f9fa, #e9ecef); display: flex; align-items: center; justify-content: center;">
+                        <div class="text-center">
+                            <i class="fas fa-map text-muted mb-3" style="font-size: 4rem;"></i>
+                            <h5 class="text-muted">Carte Google Maps</h5>
+                            <p class="text-muted">(Intégration à venir)</p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Company Info -->
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-section">
+                        <h5>Cabinet CEP</h5>
+                        <p>
+                            Formation professionnelle d'excellence dans les domaines médical, 
+                            psychologique et organisationnel depuis plus de 10 ans.
+                        </p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/profile.php?id=61578111257386" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://api.whatsapp.com/send?phone=%2B212663890050" class="social-link">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="col-lg-2 mb-4">
+                    <div class="footer-section">
+                        <h5>Liens rapides</h5>
+                        <a href="#accueil">Accueil</a>
+                        <a href="#formations">Formations</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Formations -->
+                <div class="col-lg-3 mb-4">
+                    <div class="footer-section">
+                        <h5>Nos formations</h5>
+                        <a href="#">Formation Médicale</a>
+                        <a href="#">Psychologie Clinique</a>
+                        <a href="#">Gestion d'Équipe</a>
+                        <a href="#">Urgences Médicales</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="col-lg-3 mb-4">
+                    <div class="footer-section">
+                        <h5>Contact</h5>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fas fa-map-marker-alt me-2" style="color: var(--button-color);"></i>
+                            <small> Marrakech<br> </small>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fas fa-phone me-2" style="color: var(--button-color);"></i>
+                            <small>07 13 52 45 45</small>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-envelope me-2" style="color: var(--button-color);"></i>
+                            <small>contact@cabinet-cep.fr</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 Cabinet CEP. Tous droits réservés.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="#" class="text-muted me-3" style="text-decoration: none;">Mentions légales</a>
+                        <a href="#" class="text-muted me-3" style="text-decoration: none;">Politique de confidentialité</a>
+                        <button class="btn btn-sm btn-outline-light" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                            <i class="fas fa-arrow-up me-1"></i>
+                            Haut de page
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 100
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Typing effect for hero title
+        document.addEventListener('DOMContentLoaded', function() {
+            const text = "Développez vos compétences avec Cabinet CEP";
+            const typingElement = document.getElementById('typing-text');
+            let index = 0;
+            
+            typingElement.innerHTML = '';
+            
+            function typeWriter() {
+                if (index < text.length) {
+                    typingElement.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            
+            setTimeout(typeWriter, 1000);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Formation filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const formationItems = document.querySelectorAll('.formation-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const category = this.getAttribute('data-category');
+
+                formationItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.classList.add('fade-in', 'visible');
+                        }, 100);
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('visible');
+                    }
+                });
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Custom cursor effect
+        const cursor = document.getElementById('cursor');
+        let mouseX = 0, mouseY = 0;
+
+        document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+        });
+
+        // Cursor hover effects
+        document.querySelectorAll('a, button, .formation-card').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+
+        // Contact form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('.btn-submit');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Message envoyé avec succès ! Nous vous recontacterons bientôt.');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Formation card interactions
+        document.querySelectorAll('.btn-primary-formation').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const formationTitle = this.closest('.formation-card').querySelector('.formation-title').textContent;
+                alert(`Inscription à la formation "${formationTitle}" - Redirection vers le formulaire d'inscription...`);
+            });
+        });
+
+        document.querySelectorAll('.btn-outline-formation').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const formationTitle = this.closest('.formation-card').querySelector('.formation-title').textContent;
+                alert(`Informations détaillées sur "${formationTitle}" - Redirection vers la page de détails...`);
+            });
+        });
+
+        // Show initial animations
+        setTimeout(() => {
+            document.querySelectorAll('.fade-in').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight) {
+                    el.classList.add('visible');
+                }
+            });
+        }, 500);
+    </script>
+</body>
+</html>
