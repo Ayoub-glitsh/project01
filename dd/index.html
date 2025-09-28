@@ -649,6 +649,9 @@
 
 
 
+.category-badge {
+    display: none !important;
+}
 
 
 
@@ -669,7 +672,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="navbar">
         <div class="container">
             <a class="navbar-brand" href="#accueil">
-                <img src="img/cep.png" width="220" height="90" alt="Cabinet CEP" class="me-2">
+                <img src="img/cep.png" width="340" height="100" alt="Cabinet CEP" class="me-2">
                <!--  Cabinet CEP -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -799,7 +802,7 @@
 
 
 
-                <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="medical">
+                <!-- <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="medical">
                     <div class="formation-card">
                         <div class="formation-image" style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
                             <div class="category-badge badge-medical">Médical</div>
@@ -817,7 +820,7 @@
                                 <!-- <div class="formation-price">
                                     <i class="fas fa-tag"></i>
                                     1 200€
-                                </div> -->
+                                </div> 
                             </div>
                             <div class="formation-features">
                                 <h6>Points clés :</h6>
@@ -835,11 +838,24 @@
                                 <button class="btn btn-formation btn-outline-formation">
                                     <i class="fas fa-info-circle me-2"></i>
                                     En savoir plus
-                                </button>
+                                </button> 
+                                <button class="btn btn-formation btn-outline-formation" data-bs-toggle="modal" data-bs-target="#formationDelegueModal">
+    <i class="fas fa-info-circle me-2"></i>
+    En savoir plus
+</button>
                             </div> 
                         </div>
                     </div>
                 </div>
+
+ -->
+
+
+
+
+
+
+
 
                 <!-- Formation 2: Psychologie -->
 
@@ -882,20 +898,25 @@
                                 </ul>
                             </div>
                             <div class="formation-buttons">
-                                <button class="btn btn-formation btn-primary-formation" onclick="window.location.href='https://api.whatsapp.com/send?phone=%2B212663890050';">
+                                <button class="btn btn-formation btn-primary-formation" onclick="window.location.href='https://forms.gle/Esq4oasSiTT7xh5o6';">
                                     <i class="fas fa-user-plus me-2"></i>
                                     S'inscrire
                                 </button>
-                                <button class="btn btn-formation btn-outline-formation">
+                                <!-- <button class="btn btn-formation btn-outline-formation">
                                     <i class="fas fa-info-circle me-2"></i>
                                     En savoir plus
-                                </button>
+                                </button> -->
+
+                                <button class="btn btn-formation btn-outline-formation" data-bs-toggle="modal" data-bs-target="#formationPsychoModal">
+    <i class="fas fa-info-circle me-2"></i>
+    En savoir plus
+</button>
                             </div> 
                         </div>
                     </div>
                 </div>
 
-                <!-- Formation 3: Organisation -->
+                <!-- <!-- Formation 3: Organisation 
                 <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="organisation">
                     <div class="formation-card">
                         <div class="formation-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
@@ -914,7 +935,7 @@
                                 <!-- <div class="formation-price">
                                     <i class="fas fa-tag"></i>
                                     850€
-                                </div> -->
+                                </div> 
                             </div>
                             <div class="formation-features">
                                 <h6>Points clés :</h6>
@@ -940,10 +961,10 @@
                     </div>
                 </div>
 
-
+ -->
 
                 <!-- Formation 4: Organisation -->
-                <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="organisation">
+                <!-- <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="organisation">
                     <div class="formation-card">
                         <div class="formation-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
                             <div class="category-badge badge-org">Organisation</div>
@@ -961,7 +982,7 @@
                                 <!-- <div class="formation-price">
                                     <i class="fas fa-tag"></i>
                                     850€
-                                </div> -->
+                                </div> 
                             </div>
                             <div class="formation-features">
                                 <h6>Points clés :</h6>
@@ -983,7 +1004,7 @@
                         </div>
                     </div>
                 </div>
-
+ -->
                 <!-- <!-- Formation 5: Organisation 
                 <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="organisation">
                     <div class="formation-card">
@@ -1058,21 +1079,25 @@
                                 </ul>
                             </div>
                             <div class="formation-buttons">
-                                 <button class="btn btn-formation btn-primary-formation"  onclick="window.location.href='https://api.whatsapp.com/send?phone=%2B212663890050';">
+                                 <button class="btn btn-formation btn-primary-formation"  onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdnN7Vb99JbRGJZevyET28mJA-OftbHPVj6gZEsFz2qDzOWYw/viewform?fbclid=IwVERDUANF8KdleHRuA2FlbQIxMAABHpFI2513p2ZSJ0FIAB2TDLXGje-NgLJWhFK02Hw9UPVXhdMwt-NyUiibhycm_aem_-TgrvkmTECnxlcTQAR4EWA';">
                                     <i class="fas fa-user-plus me-2"></i>
                                     S'inscrire
                                 </button>
-                                <button class="btn btn-formation btn-outline-formation">
+                                <!-- <button class="btn btn-formation btn-outline-formation">
                                     <i class="fas fa-info-circle me-2"></i>
                                     En savoir plus
-                                </button> 
+                                </button>  -->
+                                <button class="btn btn-formation btn-outline-formation" data-bs-toggle="modal" data-bs-target="#formationDelegueModal">
+    <i class="fas fa-info-circle me-2"></i>
+    En savoir plus
+</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Formation 7: Thérapie Comportementale -->
-                <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="psycho">
+                <!-- <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="psycho">
                     <div class="formation-card">
                         <div class="formation-image" style="background-image: url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
                             <div class="category-badge badge-psycho">Psychologie</div>
@@ -1090,7 +1115,7 @@
                                 <!-- <div class="formation-price">
                                     <i class="fas fa-tag"></i>
                                     1 100€
-                                </div> -->
+                                </div> 
                             </div>
                             <div class="formation-features">
                                 <h6>Points clés :</h6>
@@ -1114,7 +1139,7 @@
                     </div>
                 </div>
 
-
+ -->
 
                 <!-- Formation 7: Thérapie Comportementale -->
                 <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="psycho">
@@ -1141,26 +1166,31 @@
                                 <h6>Points clés :</h6>
                                 <ul>
                                     <li><i class="fas fa-check-circle"></i> Formation professionnalisante</li>
-                                    <!-- <li><i class="fas fa-check-circle"></i> Outils d'évaluation</li>
-                                    <li><i class="fas fa-check-circle"></i> Cas pratiques</li> -->
+                                    <li><i class="fas fa-check-circle"></i> Outils d'évaluation</li>
+                                    <li><i class="fas fa-check-circle"></i> Cas pratiques</li> 
                                 </ul>
                             </div>
                              <div class="formation-buttons">
-                                <button class="btn btn-formation btn-primary-formation" onclick="window.location.href='https://api.whatsapp.com/send?phone=%2B212663890050';">
+                                <button class="btn btn-formation btn-primary-formation" onclick="window.location.href='https://forms.gle/Esq4oasSiTT7xh5o6';">
                                     <i class="fas fa-user-plus me-2"></i>
                                     S'inscrire
                                 </button>
-                                <button class="btn btn-formation btn-outline-formation">
+                                <!-- <button class="btn btn-formation btn-outline-formation">
                                     <i class="fas fa-info-circle me-2"></i>
                                     En savoir plus
-                                </button>
+                                </button> -->
+                                <button class="btn btn-formation btn-outline-formation" data-bs-toggle="modal" data-bs-target="#formationCoachModal">
+    <i class="fas fa-info-circle me-2"></i>
+    En savoir plus
+</button>
+
                             </div> 
                         </div>
                     </div>
                 </div>
 
                 <!-- Formation 8: Stratégie d'Entreprise -->
-                <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="organisation">
+                <!-- <div class="col-lg-4 col-md-6 mb-4 formation-item fade-in" data-category="organisation">
                     <div class="formation-card">
                         <div class="formation-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
                             <div class="category-badge badge-org">Organisation</div>
@@ -1178,7 +1208,7 @@
                                 <!-- <div class="formation-price">
                                     <i class="fas fa-tag"></i>
                                     1 050€
-                                </div> -->
+                                </div> -
                             </div>
                             <div class="formation-features">
                                 <h6>Points clés :</h6>
@@ -1202,7 +1232,7 @@
                     </div>
                 </div>
             </div>
-
+ -->
             <!-- Show All Button -->
             <!--<div class="text-center mt-5 fade-in">
                 <button class="btn btn-outline-primary btn-lg">
@@ -1210,6 +1240,7 @@
                     Voir toutes nos formations
                 </button>
             </div> -->
+
         </div>
     </section>
 
@@ -1387,10 +1418,9 @@
                 <div class="col-lg-3 mb-4">
                     <div class="footer-section">
                         <h5>Nos formations</h5>
-                        <a href="#">Formation Médicale</a>
-                        <a href="#">Psychologie Clinique</a>
-                        <a href="#">Gestion d'Équipe</a>
-                        <a href="#">Urgences Médicales</a>
+                        <a href="#">Medical  Et paramédical </a>
+                        <a href="#">Psychoeducatif</a>
+                        <a href="#">Organisations </a>
                     </div>
                 </div>
                 
@@ -1432,6 +1462,251 @@
             </div>
         </div>
     </footer>
+
+
+
+
+
+
+
+
+    <!-- Modale Délégué Médical -->
+<div class="modal fade" id="formationDelegueModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title w-100 text-center">Délégué Médical</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <img src="img/image2.jpeg" class="img-fluid rounded" alt="Délégué Médical Formation">
+                    </div>
+                    <div class="col-md-8">
+                        <h6>Un métier dynamique et recherché dans le secteur de la santé</h6>
+                        <p><strong>Durée :</strong> 3 mois - Week-ends uniquement</p>
+                        
+                        <h6>Programme de la formation :</h6>
+                        <ul>
+                            <li>Connaissances des produits pharmaceutiques et médicaux</li>
+                            <li>Techniques de vente et négociation</li>
+                            <li>Réglementation du secteur médical</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h6>Compétences acquises :</h6>
+                <ul>
+                    <li>Maîtrise de l'argumentaire médical</li>
+                    <li>Capacité à établir des relations durables avec les professionnels de santé</li>
+                    <li>Connaissance des enjeux du marché pharmaceutique</li>
+                </ul>
+                
+                <h6>Perspectives professionnelles :</h6>
+                <p>Le délégué médical est un professionnel très recherché par les laboratoires pharmaceutiques et les entreprises de dispositifs médicaux.</p>
+            </div>
+            
+            <div class="modal-footer">
+                <a href="https://api.whatsapp.com/send?phone=+212663890050&text=Bonjour, je suis intéressé par la formation Délégué Médical" 
+                   target="_blank" class="btn btn-success">
+                   <i class="fab fa-whatsapp me-2"></i> Contacter notre support
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnN7Vb99JbRGJZevyET28mJA-OftbHPVj6gZEsFz2qDzOWYw/viewform?fbclid=IwVERDUANF8KdleHRuA2FlbQIxMAABHpFI2513p2ZSJ0FIAB2TDLXGje-NgLJWhFK02Hw9UPVXhdMwt-NyUiibhycm_aem_-TgrvkmTECnxlcTQAR4EWA" class="btn btn-primary">
+                    <i class="fas fa-user-plus me-2"></i> S'inscrire
+                </a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Modale -->
+<div class="modal fade" id="formationPsychoModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title w-100 text-center">Dynamique Naturelle de la Parole</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <img src="img/image1.jpeg" class="img-fluid rounded" alt="Psychologie">
+                    </div>
+                    <div class="col-md-8">
+                        <h6>Approfondissez vos compétences en thérapie de la parole</h6>
+                        <p><strong>Durée :</strong> 3 jours (Niveau 1 & Niveau 2)</p>
+                        <p><strong>Lieu :</strong> Marrakech</p>
+
+                        <h6>Programme :</h6>
+                        <ul>
+                            <li>Approches thérapeutiques innovantes</li>
+                            <li>Études de cas réels</li>
+                            <li>Supervision clinique</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h6>Compétences acquises :</h6>
+                <ul>
+                    <li>Expertise en dynamique naturelle de la parole</li>
+                    <li>Outils thérapeutiques efficaces</li>
+                    <li>Capacité d’intervention clinique</li>
+                </ul>
+            </div>
+
+            <div class="modal-footer">
+                <a href="https://api.whatsapp.com/send?phone=+212713524545&text=Bonjour, je veux plus d'infos sur la formation Dynamique Naturelle de la Parole" target="_blank" class="btn btn-success">
+                    <i class="fab fa-whatsapp me-2"></i> Contacter notre support
+                </a>
+                <a href="https://forms.gle/CijYMFFeQzGTvShv7" class="btn btn-primary">
+                    <i class="fas fa-user-plus me-2"></i> S'inscrire
+                </a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modale Coach Scolaire -->
+<div class="modal fade" id="formationCoachModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Header -->
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title w-100 text-center">Coach Scolaire</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <img src="img/pub coach.png" class="img-fluid rounded" alt="Coach Scolaire Formation">
+                    </div>
+                    <div class="col-md-8">
+                        <h6>Un métier d’accompagnement pour guider les élèves vers la réussite</h6>
+                        <p><strong>Durée :</strong> 4 mois</p>
+
+                        <h6>Programme de la formation :</h6>
+                        <ul>
+                            <li>Techniques de coaching adaptées au milieu scolaire</li>
+                            <li>Accompagnement dans l’orientation et la motivation</li>
+                            <li>Stratégies pour améliorer les performances académiques</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h6>Compétences acquises :</h6>
+                <ul>
+                    <li>Capacité à motiver et accompagner les élèves</li>
+                    <li>Maîtrise des techniques de coaching pédagogique</li>
+                    <li>Outils pour favoriser l’autonomie et la confiance des apprenants</li>
+                </ul>
+
+                <h6>Perspectives professionnelles :</h6>
+                <p>Le coach scolaire peut exercer dans les établissements scolaires, les associations éducatives, les centres de soutien scolaire ou en pratique indépendante.</p>
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+                <a href="https://api.whatsapp.com/send?phone=+212713524545&text=Bonjour, je veux plus d'infos sur la formation Coach Scolaire" 
+                   target="_blank" class="btn btn-success">
+                   <i class="fab fa-whatsapp me-2"></i> Contacter notre support
+                </a>
+                <a href="https://forms.gle/Esq4oasSiTT7xh5o6" class="btn btn-primary">
+                    <i class="fas fa-user-plus me-2"></i> S'inscrire
+                </a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Modale Délégué Médical -->
+<div class="modal fade" id="formationDelegueModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Header -->
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title w-100 text-center">Délégué Médical</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <img src="img/image2.jpeg" class="img-fluid rounded" alt="Délégué Médical Formation">
+                    </div>
+                    <div class="col-md-8">
+                        <h6>Un métier dynamique et recherché dans le secteur de la santé</h6>
+                        <p><strong>Durée :</strong> 3 mois – Week-ends uniquement</p>
+
+                        <h6>Programme de la formation :</h6>
+                        <ul>
+                            <li>Connaissance des produits pharmaceutiques et médicaux</li>
+                            <li>Techniques de vente et de négociation</li>
+                            <li>Réglementation du secteur médical</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h6>Compétences acquises :</h6>
+                <ul>
+                    <li>Maîtrise de l’argumentaire médical</li>
+                    <li>Capacité à établir des relations durables avec les professionnels de santé</li>
+                    <li>Connaissance des enjeux du marché pharmaceutique</li>
+                </ul>
+
+                <h6>Perspectives professionnelles :</h6>
+                <p>Le délégué médical est un profil très recherché par les laboratoires pharmaceutiques et les entreprises de dispositifs médicaux.</p>
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+                <a href="https://api.whatsapp.com/send?phone=+212713524545&text=Bonjour, je veux plus d'infos sur la formation Délégué Médical" 
+                   target="_blank" class="btn btn-success">
+                   <i class="fab fa-whatsapp me-2"></i> Contacter notre support
+                </a>
+                <a href="mailto:cep.cabinet@gmail.com?subject=Inscription Formation Délégué Médical" class="btn btn-primary">
+                    <i class="fas fa-user-plus me-2"></i> S'inscrire
+                </a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1580,7 +1855,7 @@
         });
 
         // Formation card interactions
-        document.querySelectorAll('.btn-primary-formation').forEach(btn => {
+        /* document.querySelectorAll('.btn-primary-formation').forEach(btn => {
             btn.addEventListener('click', function() {
                 const formationTitle = this.closest('.formation-card').querySelector('.formation-title').textContent;
                 alert(`Inscription à la formation "${formationTitle}" - Redirection vers le formulaire d'inscription...`);
@@ -1593,7 +1868,7 @@
                 alert(`Informations détaillées sur "${formationTitle}" - Redirection vers la page de détails...`);
             });
         });
-
+ */
         // Show initial animations
         setTimeout(() => {
             document.querySelectorAll('.fade-in').forEach(el => {
@@ -1602,6 +1877,25 @@
                 }
             });
         }, 500);
+
+     /*    // Remplir automatiquement le contenu de la modale
+const formationModal = document.getElementById('formationModal');
+formationModal.addEventListener('show.bs.modal', function (event) {
+  const button = event.relatedTarget;
+  const title = button.getAttribute('data-title');
+  const description = button.getAttribute('data-description');
+
+  const modalTitle = formationModal.querySelector('.modal-title');
+  const modalDesc = formationModal.querySelector('#formationModalDesc');
+
+  modalTitle.textContent = title;
+  modalDesc.textContent = description;
+}); */
+
     </script>
+
+
+   
+
 </body>
 </html>
